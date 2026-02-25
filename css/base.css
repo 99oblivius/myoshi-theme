@@ -1,0 +1,86 @@
+/* --------------------------------------------------------------------------
+   @PROPERTY DECLARATIONS (CSS Houdini)
+   Must be at the top level — these were sanitized by the platform but now
+   work natively via @import.
+   -------------------------------------------------------------------------- */
+
+@property --shimmer-x {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: -100%;
+}
+
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 135deg;
+}
+
+
+/* --------------------------------------------------------------------------
+   KEYFRAMES
+   -------------------------------------------------------------------------- */
+
+@keyframes card-flash {
+  0% {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4), 0 0 15px rgba(139, 108, 193, 0.15);
+  }
+  100% {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@keyframes text-shimmer {
+  0% {
+    --shimmer-x: 200%;
+  }
+  100% {
+    --shimmer-x: -100%;
+  }
+}
+
+@keyframes hover-pulsate {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+@keyframes green-opacity-test {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Particle drift — slow upward float with gentle horizontal sway */
+@keyframes particle-drift-1 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-1000px);
+  }
+}
+
+@keyframes particle-drift-2 {
+  from {
+    transform: translateY(0) translateX(0);
+  }
+  33% {
+    transform: translateY(-267px) translateX(15px);
+  }
+  66% {
+    transform: translateY(-534px) translateX(-10px);
+  }
+  to {
+    transform: translateY(-800px) translateX(0);
+  }
+}

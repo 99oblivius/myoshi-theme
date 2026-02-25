@@ -1,0 +1,86 @@
+/* --------------------------------------------------------------------------
+   HEADER — Frosted glass obsidian
+   -------------------------------------------------------------------------- */
+
+header.header {
+  background: transparent;
+  border-bottom: none;
+  box-shadow: none;
+  position: relative;
+  z-index: 10;
+}
+
+.header-top {
+  background: rgba(13, 11, 20, 0.65);
+  backdrop-filter: blur(12px) saturate(1.1);
+  -webkit-backdrop-filter: blur(12px) saturate(1.1);
+}
+
+.header-inner {
+  color: #b8a8d0;
+}
+
+a.logo {
+  color: #c9a84c;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a.logo:hover {
+  color: #d4af37;
+}
+
+.header-user {
+  color: #7a6a94;
+}
+
+.header-user a {
+  color: #8b6cc1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.header-user a:hover {
+  color: #c9a84c;
+}
+
+/* Notification bell SVG */
+.header-user svg,
+.header [class*="notification"] svg,
+.header [class*="bell"] svg {
+  color: #8b6cc1;
+  stroke: #8b6cc1;
+  transition: color 0.3s ease, stroke 0.3s ease;
+}
+
+.header-user svg:hover,
+.header [class*="notification"] svg:hover {
+  color: #c9a84c;
+  stroke: #c9a84c;
+}
+
+.header-nav-bar {
+  background: rgba(13, 11, 20, 0.55);
+  backdrop-filter: blur(10px) saturate(1.05);
+  -webkit-backdrop-filter: blur(10px) saturate(1.05);
+  border-top: 1px solid rgba(107, 70, 163, 0.10);
+}
+
+nav.header-nav a {
+  color: #8b6cc1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav.header-nav a:hover {
+  color: #c9a84c;
+}
+
+/* Active nav link */
+nav.header-nav a.active,
+nav.header-nav a[aria-current="page"] {
+  color: #c9a84c;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.4);
+}
+

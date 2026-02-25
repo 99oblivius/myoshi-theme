@@ -1,0 +1,31 @@
+/* --------------------------------------------------------------------------
+   FOOTER — Obsidian match + margin fix
+   -------------------------------------------------------------------------- */
+
+footer.site-footer {
+  background: rgba(13, 11, 20, 0.55);
+  backdrop-filter: blur(10px) saturate(1.05);
+  -webkit-backdrop-filter: blur(10px) saturate(1.05);
+  border-top: 1px solid rgba(107, 70, 163, 0.08);
+  margin: 0 !important;
+  margin-top: 0 !important;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-links a {
+  color: #7a6a94;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #c9a84c;
+}
+
+.copyright {
+  color: #5a4a74;
+  opacity: 0.6;
+}
