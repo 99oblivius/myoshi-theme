@@ -21,6 +21,8 @@ header.header > * {
   backdrop-filter: blur(12px) saturate(1.1);
   -webkit-backdrop-filter: blur(12px) saturate(1.1);
   box-shadow: none !important;
+  position: relative;
+  z-index: 2;
 }
 
 .header-inner {
@@ -73,6 +75,8 @@ a.logo:hover {
   -webkit-backdrop-filter: blur(10px) saturate(1.05);
   border-top: 1px solid rgba(107, 70, 163, 0.10) !important;
   box-shadow: none !important;
+  position: relative;
+  z-index: 1;
 }
 
 nav.header-nav a {
