@@ -1004,30 +1004,39 @@
 
 /* Tree container */
 .profile-page.profile-custom-css .blurb-content .tree {
+  display: block !important;
   margin: 0 !important;
   padding: 0 !important;
+  border: none !important;
 }
 
 /* Tree node — each line with a branch */
 .profile-page.profile-custom-css .blurb-content .t-node {
+  display: block !important;
   position: relative !important;
   margin: 0 !important;
-  padding: 0 0 0 1.5em !important;
-  border-left: 1px solid #5a4a74 !important;
+  padding: 0 0 0 20px !important;
+  border: none !important;
+  border-left: 2px solid #5a4a74 !important;
   line-height: 1.6 !important;
   color: #b8a8d0 !important;
+  min-height: 0 !important;
+  box-sizing: border-box !important;
 }
 
 /* Horizontal branch arm */
 .profile-page.profile-custom-css .blurb-content .t-node::before {
   content: '' !important;
+  display: block !important;
   position: absolute !important;
-  left: -1px !important;
+  left: -2px !important;
   top: 0 !important;
   height: 0.8em !important;
-  width: 1em !important;
-  border-bottom: 1px solid #5a4a74 !important;
+  width: 16px !important;
+  border: none !important;
+  border-bottom: 2px solid #5a4a74 !important;
   pointer-events: none !important;
+  box-sizing: border-box !important;
 }
 
 /* Last node — corner, no continuing vertical line */
@@ -1035,12 +1044,14 @@
   border-left-color: transparent !important;
 }
 .profile-page.profile-custom-css .blurb-content .t-node.t-last::before {
-  border-left: 1px solid #5a4a74 !important;
+  border-left: 2px solid #5a4a74 !important;
 }
 
 /* Ghost text (faded aside) */
 .profile-page.profile-custom-css .blurb-content .t-ghost {
-  padding-left: 1.5em !important;
+  display: block !important;
+  margin: 0 !important;
+  padding-left: 20px !important;
   color: #5a4a74 !important;
   opacity: 0.5 !important;
   line-height: 1.6 !important;
@@ -1060,7 +1071,7 @@
 
 /* Sub-tree offset for prompt sections */
 .profile-page.profile-custom-css .blurb-content .tree.t-sub {
-  margin-left: 0.5em !important;
+  margin-left: 8px !important;
 }
 
 
