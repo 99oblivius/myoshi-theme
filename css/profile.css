@@ -1017,34 +1017,34 @@
   margin: 0 !important;
   padding: 0 0 0 20px !important;
   border: none !important;
-  border-left: 2px solid #5a4a74 !important;
   line-height: 1.6 !important;
   color: #b8a8d0 !important;
   min-height: 0 !important;
   box-sizing: border-box !important;
 }
 
-/* Horizontal branch arm */
+/* Tree lines — backgrounds instead of borders for consistent sub-pixel rendering */
 .profile-page.profile-custom-css .blurb-content .t-node::before {
   content: '' !important;
   display: block !important;
   position: absolute !important;
-  left: -2px !important;
+  left: 0 !important;
   top: 0 !important;
-  height: 0.8em !important;
+  bottom: 0 !important;
+  height: auto !important;
   width: 16px !important;
   border: none !important;
-  border-bottom: 2px solid #5a4a74 !important;
   pointer-events: none !important;
   box-sizing: border-box !important;
+  background:
+    linear-gradient(#5a4a74, #5a4a74) 0 0 / 2px 100% no-repeat,
+    linear-gradient(#5a4a74, #5a4a74) 0 0.8em / 100% 2px no-repeat !important;
 }
 
-/* Last node — corner, no continuing vertical line */
-.profile-page.profile-custom-css .blurb-content .t-node.t-last {
-  border-left-color: transparent !important;
-}
+/* Last node — corner only, no line continuing below */
 .profile-page.profile-custom-css .blurb-content .t-node.t-last::before {
-  border-left: 2px solid #5a4a74 !important;
+  bottom: auto !important;
+  height: calc(0.8em + 2px) !important;
 }
 
 /* Ghost text (faded aside) */
