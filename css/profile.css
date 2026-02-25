@@ -690,22 +690,14 @@
   padding: 0 !important;
 }
 
-/* Blurb title - hide original text, replace via pseudo-element */
+/* Hide blurb title entirely (content lives in Custom HTML now) */
 .profile-page.profile-custom-css .blurb-title {
-  text-align: center !important;
-  font-size: 0 !important;
-  color: transparent !important;
-  margin-bottom: 0.8em !important;
+  display: none !important;
 }
 
-.profile-page.profile-custom-css .blurb-title::after {
-  content: "DOSSIER" !important;
-  color: rgba(184, 168, 208, 0.3) !important;
-  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace !important;
-  font-size: 0.75rem !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.2em !important;
-  font-weight: 300 !important;
+/* Hide blurb card header ("99OBLIVION's Blurbs") */
+.profile-page.profile-custom-css .card:has(.blurb-section) > .card-header {
+  display: none !important;
 }
 
 /* Blurb content */
@@ -1007,54 +999,23 @@
 
 
 /* --------------------------------------------------------------------------
-   INTERESTS
+   INTERESTS — hidden (moved to about section HTML)
    -------------------------------------------------------------------------- */
 
-.profile-page.profile-custom-css .interest-section {
-  border-bottom: 1px solid rgba(107, 70, 163, 0.06) !important;
-  padding: 0.75em 0 !important;
-}
-
-.profile-page.profile-custom-css .interest-section:last-child {
-  border-bottom: none !important;
-}
-
-.profile-page.profile-custom-css .interest-title {
-  color: #7a6a94 !important;
-  font-weight: 600 !important;
-  font-size: 0.72em !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.08em !important;
-  margin-bottom: 0.3em !important;
-  border-left: 2px solid rgba(201, 168, 76, 0.18) !important;
-  padding-left: 0.5em !important;
-}
-
-.profile-page.profile-custom-css .interest-content {
-  color: #b8a8d0 !important;
-  line-height: 1.65 !important;
-  padding-left: 0.5em !important;
-}
-
-/* Replace Games text with SVG icons — hide all nested text (Lexical editor wraps in deep divs) */
-.profile-page.profile-custom-css .interest-section:last-child .interest-content {
-  font-size: 0 !important;
-  color: transparent !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 1em !important;
-  padding-top: 0.4em !important;
-  position: relative !important;
-  overflow: hidden !important;
-  height: 28px !important;
-}
-
-/* Hide the Lexical editor text container entirely */
-.profile-page.profile-custom-css .interest-section:last-child .interest-content > * {
+.profile-page.profile-custom-css .card:has(.interest-section) {
   display: none !important;
 }
 
-.profile-page.profile-custom-css .interest-section:last-child .interest-content::before {
+/* Game icons in about section (replaces old interests SVG hack) */
+.profile-page.profile-custom-css .blurb-content .game-icons {
+  display: inline-block !important;
+  width: 100px !important;
+  height: 24px !important;
+  vertical-align: middle !important;
+  opacity: 0.85 !important;
+}
+
+.profile-page.profile-custom-css .blurb-content .game-icons::before {
   content: "" !important;
   display: block !important;
   background-image:
