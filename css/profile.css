@@ -1591,3 +1591,53 @@
 }
 
 
+/* --------------------------------------------------------------------------
+   PROFILE ACTIONS DROPDOWN
+   -------------------------------------------------------------------------- */
+
+.profile-actions-dropdown {
+  background: rgba(13, 11, 20, 0.85) !important;
+  backdrop-filter: blur(12px) saturate(1.1) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(1.1) !important;
+  border: 1px solid rgba(107, 70, 163, 0.2) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+  overflow: hidden !important;
+}
+
+/* CSS toggle row */
+.profile-actions-dropdown > div[style*="border-bottom"] {
+  border-bottom-color: rgba(107, 70, 163, 0.15) !important;
+}
+
+.profile-actions-dropdown button {
+  color: #b8a8d0 !important;
+}
+
+/* ON badge */
+.profile-actions-dropdown button span[style*="vs-success"] {
+  background: rgba(107, 70, 163, 0.2) !important;
+  color: #c9a84c !important;
+}
+
+/* Section divider */
+.profile-actions-dropdown > div[style*="padding: 6px"] {
+  border-bottom-color: rgba(107, 70, 163, 0.15) !important;
+}
+
+/* Section header */
+.profile-actions-dropdown div[style*="uppercase"] {
+  color: #7a6a94 !important;
+}
+
+/* Links */
+.profile-actions-dropdown a {
+  color: #b8a8d0 !important;
+  transition: color 0.2s ease, background 0.2s ease !important;
+}
+
+.profile-actions-dropdown a:hover {
+  color: #c9a84c !important;
+  background: rgba(107, 70, 163, 0.1) !important;
+}
+
