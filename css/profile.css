@@ -834,7 +834,8 @@
 .profile-page.profile-custom-css .friends-grid {
   color: #b8a8d0 !important;
   display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
+  grid-template-columns: repeat(4, minmax(0, 150px)) !important;
+  justify-content: center !important;
   gap: 10px !important;
   padding: 8px !important;
 }
