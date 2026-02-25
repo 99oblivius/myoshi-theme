@@ -819,42 +819,64 @@
    FRIENDS GRID
    -------------------------------------------------------------------------- */
 
+/* Remove card backdrop + header for friends */
+.profile-page.profile-custom-css .card:has(.friends-grid) {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.profile-page.profile-custom-css .card:has(.friends-grid) > .card-header {
+  display: none !important;
+}
+
 .profile-page.profile-custom-css .friends-grid {
   color: #b8a8d0 !important;
-  gap: 0.5em !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 8px !important;
+  padding: 4px !important;
 }
 
 .profile-page.profile-custom-css .friend-item {
-  padding: 0.5em !important;
-  border-radius: 3px !important;
+  padding: 4px !important;
+  border-radius: 0 !important;
   background: transparent !important;
-  transition: background 0.3s ease !important;
   text-decoration: none !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+  transition: filter 0.3s ease, transform 0.3s ease !important;
 }
 
 .profile-page.profile-custom-css .friend-item:hover {
   background: transparent !important;
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.35))
+          drop-shadow(0 0 10px rgba(139, 108, 193, 0.25)) !important;
+  transform: scale(1.04) !important;
 }
 
+/* Hexagonal clip-path on avatars */
 .profile-page.profile-custom-css .friend-avatar {
-  border: 1px solid rgba(107, 70, 163, 0.12) !important;
-  border-radius: 4px !important;
-  transition: filter 0.3s ease, border-color 0.3s ease, transform 0.3s ease !important;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  transition: filter 0.3s ease, transform 0.3s ease !important;
+  aspect-ratio: 1 !important;
+  width: 100% !important;
 }
 
-/* Bloom on container hover */
 .profile-page.profile-custom-css .friend-item:hover .friend-avatar {
-  border-color: rgba(201, 168, 76, 0.18) !important;
-  filter: brightness(1.1) contrast(1.05)
-          drop-shadow(0 0 4px rgba(212, 175, 55, 0.35))
-          drop-shadow(0 0 8px rgba(139, 108, 193, 0.25)) !important;
-  transform: scale(1.02) !important;
+  filter: brightness(1.1) contrast(1.05) !important;
 }
 
 .profile-page.profile-custom-css .friend-name {
   color: #7a6a94 !important;
   font-size: 0.8em !important;
   letter-spacing: 0.02em !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
 }
 
 .profile-page.profile-custom-css .friend-name a {
