@@ -96,3 +96,75 @@ nav.header-nav a[aria-current="page"] {
   border-bottom: 1px solid rgba(201, 168, 76, 0.4);
 }
 
+
+/* --------------------------------------------------------------------------
+   NOTIFICATION DROPDOWN — Frosted glass to match theme
+   -------------------------------------------------------------------------- */
+
+.notification-dropdown {
+  background: rgba(13, 11, 20, 0.85) !important;
+  backdrop-filter: blur(12px) saturate(1.1) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(1.1) !important;
+  border: 1px solid rgba(107, 70, 163, 0.2) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+  overflow: hidden !important;
+}
+
+.notification-dropdown-header {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(107, 70, 163, 0.15) !important;
+}
+
+.notification-dropdown-title {
+  color: #c9a84c !important;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace !important;
+}
+
+.notification-dropdown-content {
+  background: transparent !important;
+}
+
+.notification-dropdown-content a {
+  color: #b8a8d0 !important;
+  text-decoration: none !important;
+  transition: background 0.2s ease !important;
+}
+
+.notification-dropdown-content a:hover {
+  background: rgba(107, 70, 163, 0.1) !important;
+}
+
+.notification-item {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(107, 70, 163, 0.08) !important;
+}
+
+.notification-avatar {
+  border: 1px solid rgba(107, 70, 163, 0.3) !important;
+  border-radius: 4px !important;
+}
+
+.notification-title {
+  color: #b8a8d0 !important;
+}
+
+.notification-time {
+  color: #7a6a94 !important;
+}
+
+.notification-dropdown-footer {
+  background: transparent !important;
+  border-top: 1px solid rgba(107, 70, 163, 0.15) !important;
+}
+
+.notification-dropdown-footer a {
+  color: #8b6cc1 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.notification-dropdown-footer a:hover {
+  color: #c9a84c !important;
+}
+
