@@ -1316,6 +1316,7 @@
   background: rgba(13, 11, 20, 0.4) !important;
   border-color: rgba(107, 70, 163, 0.25) !important;
   border-radius: 3px !important;
+  margin: 0 4px !important;
   transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
 }
 
