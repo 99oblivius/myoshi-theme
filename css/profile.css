@@ -494,15 +494,17 @@
   text-align: left !important;
 }
 
-.profile-page.profile-custom-css .profile-mood .status-message {
+.profile-page.profile-custom-css .profile-mood .mood-text {
   color: #c4b4dc !important;
   background: transparent !important;
   border-left: none !important;
   padding: 0 !important;
   margin-top: 0 !important;
   border-radius: 0 !important;
-  font-family: inherit !important;
-  font-size: inherit !important;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Courier New", monospace !important;
+  font-size: 1em !important;
+  font-style: normal !important;
+  line-height: inherit !important;
 }
 
 /* --- Profile Status --- */
@@ -857,7 +859,7 @@
   pointer-events: none !important;
   z-index: 9 !important;
   opacity: 0.5 !important;
-  animation: gibberish-scroll 12s linear infinite !important;
+  animation: gibberish-scroll 20s linear infinite !important;
   transition: opacity 0.2s ease !important;
 }
 
@@ -1299,6 +1301,7 @@
   border-top: 1px solid rgba(107, 70, 163, 0.08) !important;
   box-shadow: none !important;
   padding: 0.75em !important;
+  padding-left: calc(0.75em + 2px) !important;
   color: #9585ad !important;
   overflow: visible !important;
 }
@@ -1316,7 +1319,6 @@
   background: rgba(13, 11, 20, 0.4) !important;
   border-color: rgba(107, 70, 163, 0.25) !important;
   border-radius: 3px !important;
-  margin: 0 4px !important;
   transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
 }
 

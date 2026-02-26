@@ -71,24 +71,24 @@
 
 @keyframes comment-glow {
   0% {
-    box-shadow: 6px 0 12px -2px rgba(201, 168, 76, 0.25),
-                -6px 0 12px -2px rgba(107, 70, 163, 0.15);
+    box-shadow: 0 0 6px 1px rgba(201, 168, 76, 0.2),
+                inset 0 0 4px rgba(201, 168, 76, 0.05);
   }
   25% {
-    box-shadow: 0 6px 12px -2px rgba(107, 70, 163, 0.25),
-                0 -6px 12px -2px rgba(201, 168, 76, 0.15);
+    box-shadow: 0 0 6px 1px rgba(107, 70, 163, 0.25),
+                inset 0 0 4px rgba(107, 70, 163, 0.05);
   }
   50% {
-    box-shadow: -6px 0 12px -2px rgba(201, 168, 76, 0.25),
-                6px 0 12px -2px rgba(107, 70, 163, 0.15);
+    box-shadow: 0 0 6px 1px rgba(201, 168, 76, 0.2),
+                inset 0 0 4px rgba(201, 168, 76, 0.05);
   }
   75% {
-    box-shadow: 0 -6px 12px -2px rgba(107, 70, 163, 0.25),
-                0 6px 12px -2px rgba(201, 168, 76, 0.15);
+    box-shadow: 0 0 6px 1px rgba(107, 70, 163, 0.25),
+                inset 0 0 4px rgba(107, 70, 163, 0.05);
   }
   100% {
-    box-shadow: 6px 0 12px -2px rgba(201, 168, 76, 0.25),
-                -6px 0 12px -2px rgba(107, 70, 163, 0.15);
+    box-shadow: 0 0 6px 1px rgba(201, 168, 76, 0.2),
+                inset 0 0 4px rgba(201, 168, 76, 0.05);
   }
 }
 
