@@ -837,7 +837,8 @@
   grid-template-columns: repeat(4, minmax(0, 150px)) !important;
   justify-content: center !important;
   gap: 10px !important;
-  padding: 8px !important;
+  padding: 28px 8px 8px !important;
+  position: relative !important;
 }
 
 .profile-page.profile-custom-css .friend-item {
@@ -848,7 +849,6 @@
   text-decoration: none !important;
   min-width: 0 !important;
   overflow: visible !important;
-  transition: transform 0.3s ease !important;
 }
 
 /* Blurred image border — grid overlay scaled uniformly around avatar */
@@ -863,7 +863,7 @@
   -webkit-backdrop-filter: blur(20px) saturate(1.5) brightness(1.1) !important;
   z-index: 2 !important;
   pointer-events: none !important;
-  transition: backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease !important;
+  transition: transform 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease !important;
   /* Ring mask: solid fill minus inner hex cutout (~4% inset to match avatar after scale) */
   -webkit-mask:
     url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,4 96,28 96,72 50,96 4,72 4,28' fill='black'/></svg>") center / 100% 100% no-repeat,
@@ -876,40 +876,100 @@
 }
 
 .profile-page.profile-custom-css .friend-item:hover::after {
+  transform: scale(1.134) !important;
   backdrop-filter: blur(24px) saturate(2) brightness(1.2) !important;
   -webkit-backdrop-filter: blur(24px) saturate(2) brightness(1.2) !important;
 }
 
 .profile-page.profile-custom-css .friend-item:hover {
   background: transparent !important;
-  transform: scale(1.05) !important;
 }
 
-/* Hexagonal clip-path on avatars */
+/* --- Layer 0: Supporter decoration ring (optional) ---
+   Keeps the platform's inline border-color (dynamic per supporter).
+   Hex-clipped so the colored border follows the hexagonal shape.
+   The avatar is absolutely positioned out of this wrapper so all
+   three layers (decoration → avatar → blur ring) are independent. */
+.profile-page.profile-custom-css .friend-item > div[style*="border"] {
+  grid-row: 1 !important;
+  grid-column: 1 !important;
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 1 !important;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%) !important;
+  border-width: 3px !important;
+  border-style: solid !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  background: transparent !important;
+  z-index: 0 !important;
+  transition: transform 0.3s ease !important;
+  transform-origin: center center !important;
+}
+
+/* Avatar inside supporter wrapper: escape into its own layer */
+.profile-page.profile-custom-css .friend-item > div[style*="border"] > .friend-avatar {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: auto !important;
+}
+
+/* --- Layer 1: Avatar image ---
+   Hex-clipped square. For non-supporters this is a direct grid child.
+   For supporters this is absolutely positioned inside the wrapper. */
 .profile-page.profile-custom-css .friend-avatar {
   grid-row: 1 !important;
   grid-column: 1 !important;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%) !important;
   border: none !important;
   border-radius: 0 !important;
-  transition: filter 0.3s ease !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  max-height: none !important;
+  transition: filter 0.3s ease, transform 0.3s ease !important;
+  transform-origin: center center !important;
   width: 100% !important;
+  height: auto !important;
   aspect-ratio: 1 !important;
   object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
   z-index: 1 !important;
 }
 
 .profile-page.profile-custom-css .friend-item:hover .friend-avatar {
+  transform: scale(1.05) !important;
   filter: brightness(1.1) contrast(1.05) !important;
 }
 
+/* Scale supporter wrapper on hover to match avatar */
+.profile-page.profile-custom-css .friend-item:hover > div[style*="border"] {
+  transform: scale(1.05) !important;
+}
+
+/* Friend name: absolutely positioned to top of grid, revealed on hover */
 .profile-page.profile-custom-css .friend-name {
-  color: #7a6a94 !important;
-  font-size: 0.8em !important;
+  position: absolute !important;
+  top: 4px !important;
+  left: 0 !important;
+  right: 0 !important;
+  color: #b8a8d0 !important;
+  font-size: 0.85em !important;
   letter-spacing: 0.02em !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
+  text-align: center !important;
   white-space: nowrap !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+  z-index: 10 !important;
+}
+
+.profile-page.profile-custom-css .friend-item:hover .friend-name {
+  opacity: 1 !important;
 }
 
 .profile-page.profile-custom-css .friend-name a {
