@@ -1240,22 +1240,31 @@
 
 .profile-page.profile-custom-css .card#comments {
   color: #b8a8d0 !important;
+  overflow: visible !important;
 }
 
 .profile-page.profile-custom-css .card#comments textarea,
 .profile-page.profile-custom-css .add-comment textarea {
-  background: rgba(10, 8, 18, 0.8) !important;
-  border: 1px solid rgba(107, 70, 163, 0.14) !important;
+  background: rgba(13, 11, 20, 0.4) !important;
+  border: 1px solid rgba(107, 70, 163, 0.25) !important;
   color: #b8a8d0 !important;
   border-radius: 3px !important;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace !important;
+  font-size: 0.85em !important;
   transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
   resize: vertical !important;
 }
 
+.profile-page.profile-custom-css .card#comments textarea::placeholder,
+.profile-page.profile-custom-css .add-comment textarea::placeholder {
+  color: #7a6a94 !important;
+  opacity: 1 !important;
+}
+
 .profile-page.profile-custom-css .card#comments textarea:focus,
 .profile-page.profile-custom-css .add-comment textarea:focus {
-  border-color: rgba(107, 70, 163, 0.32) !important;
-  box-shadow: 0 0 0 1px rgba(107, 70, 163, 0.10) !important;
+  border-color: rgba(201, 168, 76, 0.4) !important;
+  box-shadow: 0 0 8px rgba(201, 168, 76, 0.1) !important;
   outline: none !important;
 }
 
@@ -1266,10 +1275,54 @@
   box-shadow: none !important;
   padding: 0.75em !important;
   color: #9585ad !important;
+  overflow: visible !important;
 }
 
-.profile-page.profile-custom-css .add-comment * {
+.profile-page.profile-custom-css .card#comments .card-body {
+  overflow: visible !important;
+}
+
+.profile-page.profile-custom-css .add-comment *:not(div[style*="border"]) {
   box-shadow: none !important;
+}
+
+/* Lexical editor wrapper — override inline white bg and border */
+.profile-page.profile-custom-css .add-comment div[style*="border"] {
+  background: rgba(13, 11, 20, 0.4) !important;
+  border-color: rgba(107, 70, 163, 0.25) !important;
+  border-radius: 3px !important;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.profile-page.profile-custom-css .add-comment div[style*="border"]:focus-within {
+  border-color: rgba(201, 168, 76, 0.35) !important;
+  animation: comment-glow 3s ease infinite !important;
+}
+
+/* Contenteditable editor area */
+.profile-page.profile-custom-css .add-comment [contenteditable] {
+  color: #b8a8d0 !important;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace !important;
+  font-size: 0.85em !important;
+  caret-color: #c9a84c !important;
+}
+
+/* Placeholder text */
+.profile-page.profile-custom-css .add-comment div[style*="pointer-events: none"],
+.profile-page.profile-custom-css .add-comment div[style*="pointer-events:none"] {
+  color: #7a6a94 !important;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace !important;
+  font-size: 0.85em !important;
+}
+
+/* Emoji button */
+.profile-page.profile-custom-css .add-comment button[title*="emote"] {
+  opacity: 0.5 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.profile-page.profile-custom-css .add-comment button[title*="emote"]:hover {
+  opacity: 1 !important;
 }
 
 .profile-page.profile-custom-css .add-comment label,
@@ -1284,19 +1337,39 @@
 .profile-page.profile-custom-css .add-comment button,
 .profile-page.profile-custom-css .add-comment .action-btn,
 .profile-page.profile-custom-css .add-comment .action-button {
-  background: rgba(107, 70, 163, 0.10) !important;
-  border: 1px solid rgba(107, 70, 163, 0.20) !important;
-  color: #9585ad !important;
+  background: rgba(107, 70, 163, 0.15) !important;
+  border: 1px solid rgba(107, 70, 163, 0.25) !important;
+  color: #b8a8d0 !important;
   border-radius: 3px !important;
   cursor: pointer !important;
-  transition: border-color 0.3s ease, color 0.3s ease !important;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace !important;
+  font-size: 0.8em !important;
+  letter-spacing: 0.03em !important;
+  transition: border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 .profile-page.profile-custom-css .add-comment button:hover,
 .profile-page.profile-custom-css .add-comment .action-btn:hover,
 .profile-page.profile-custom-css .add-comment .action-button:hover {
-  border-color: rgba(201, 168, 76, 0.25) !important;
-  color: #b8a8d0 !important;
+  border-color: rgba(201, 168, 76, 0.4) !important;
+  color: #c9a84c !important;
+  box-shadow: 0 0 8px rgba(201, 168, 76, 0.1) !important;
+}
+
+/* Emoji picker button */
+.profile-page.profile-custom-css .card#comments button[aria-label*="emoji"],
+.profile-page.profile-custom-css .add-comment button[aria-label*="emoji"],
+.profile-page.profile-custom-css .card#comments [class*="emoji"],
+.profile-page.profile-custom-css .add-comment [class*="emoji"] {
+  opacity: 0.6 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.profile-page.profile-custom-css .card#comments button[aria-label*="emoji"]:hover,
+.profile-page.profile-custom-css .add-comment button[aria-label*="emoji"]:hover,
+.profile-page.profile-custom-css .card#comments [class*="emoji"]:hover,
+.profile-page.profile-custom-css .add-comment [class*="emoji"]:hover {
+  opacity: 1 !important;
 }
 
 /* --- Comments: full obsidian treatment --- */
