@@ -1701,3 +1701,72 @@
   background: rgba(107, 70, 163, 0.1) !important;
 }
 
+
+/* --------------------------------------------------------------------------
+   BADGES — hide card, relocate into profile avatar area
+   -------------------------------------------------------------------------- */
+
+/* The profile-left column needs positioning context for the badges overlay */
+.profile-page.profile-custom-css .profile-left {
+  position: relative !important;
+}
+
+/* Badges card: reposition over profile avatar area.
+   Positioned absolutely within .profile-left so it overlays the diamond.
+   Remains a .card sibling in the DOM so hover shift/dim animations apply. */
+.profile-page.profile-custom-css .profile-left .card:has(.user-badge-supporter):not(:has(.friends-grid)) {
+  position: absolute !important;
+  top: 158px !important;
+  left: calc(50% + 15px) !important;
+  z-index: 15 !important;
+  width: auto !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  transform: none !important;
+}
+
+/* Hide the badges card header */
+.profile-page.profile-custom-css .profile-left .card:has(.user-badge-supporter):not(:has(.friends-grid)) > .card-header {
+  display: none !important;
+}
+
+/* Card body: no extra styling */
+.profile-page.profile-custom-css .profile-left .card:has(.user-badge-supporter):not(:has(.friends-grid)) > .card-body {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+/* Scale down badge icons */
+.profile-page.profile-custom-css .profile-left .card:has(.user-badge-supporter):not(:has(.friends-grid)) .card-body div[style*="flex"] {
+  gap: 3px !important;
+}
+
+.profile-page.profile-custom-css .profile-left .card:has(.user-badge-supporter):not(:has(.friends-grid)) .card-body div[title] {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* Badge colors and glow */
+.profile-page.profile-custom-css .profile-left .card:has(.user-badge-supporter):not(:has(.friends-grid)) [class*="user-badge"] {
+  filter: drop-shadow(0 0 3px rgba(201, 168, 76, 0.5)) !important;
+}
+
+/* Exempt badges card from all hover dimming/shifting — always crisp and in place */
+.profile-page.profile-custom-css .profile-layout:has(.card:hover) .profile-left .card:has(.user-badge-supporter):not(:has(.friends-grid)) {
+  transform: none !important;
+  opacity: 1 !important;
+  filter: brightness(1) !important;
+  transition-delay: 0s !important;
+}
+
+.profile-page.profile-custom-css .user-badge-supporter {
+  fill: #c9a84c !important;
+  color: #c9a84c !important;
+}
+
