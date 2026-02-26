@@ -289,10 +289,8 @@
 /* Reset all direct children: flush left, no extra spacing */
 .profile-page.profile-custom-css .profile-main-card .card-body > * {
   text-align: left !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
   justify-content: flex-start !important;
 }
 
