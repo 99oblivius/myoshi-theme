@@ -20,8 +20,12 @@
   background-attachment: fixed, fixed !important;
   color: #b8a8d0 !important;
   min-height: 100vh !important;
-  position: relative !important;
-  z-index: 2 !important;
+  /* Stretch background under the footer's margin-top gap.
+     Platform sets isolation:isolate on this container, so ::after z-index:-1
+     can no longer escape behind the page. Instead, extend the container
+     downward to cover the white strip between content and footer. */
+  margin-bottom: -50px !important;
+  padding-bottom: 50px !important;
 }
 
 /* --------------------------------------------------------------------------
