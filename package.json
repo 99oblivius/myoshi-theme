@@ -1,0 +1,12 @@
+{
+  "name": "myoshi-theme",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Obsidian Throne — MyOshi profile theme",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "lightningcss": "^1.29.0"
+  }
+}
